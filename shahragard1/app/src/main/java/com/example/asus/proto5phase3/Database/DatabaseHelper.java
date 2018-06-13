@@ -88,27 +88,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = getReadableDatabase();
         String[] sqlselect = {origin, destination, day, month, seats_num};
         String tableName = "trips_table";
-        String sql="SELECT * From trips_table;";
-        // String sql="SELECT * From trips_table;";
+       // String sql="SELECT * From trips_table;";
         //String sql="SELECT * From trips_table WHERE \"Trip.Col_origin\"=\"+origin+\" AND \"Trip.COL_destination\"=\"+destination+\" AND \"Trip.COL_day\"=\"+day+\" AND \"+Trip.COL_month+\"="+month+"  AND \"+Trip.COL_seats+\"="+seats_num+" ";
-        // String sql="SELECT * From trips_table WHERE \"+Trip.COL_origin+\" LIKE '%origin%' AND \"+Trip.COL_destination+\" LIKE '%destination%' AND \"+Trip.COL_day+\" LIKE '%day%' AND \"+Trip.COL_month+\" LIKE '%month%' AND \"+Trip.COL_seats_num+\" LIKE '%seats_num%' ;";
-       // String sql = "SELECT * From trips_table WHERE 'origin' = origin AND 'destination' =destination  AND 'day' = day AND 'month' = month AND 'seats' = seats ";
+       // String sql="SELECT * From trips_table WHERE \"+Trip.COL_origin+\" LIKE '%origin%' AND \"+Trip.COL_destination+\" LIKE '%destination%' AND \"+Trip.COL_day+\" LIKE '%day%' AND \"+Trip.COL_month+\" LIKE '%month%' AND \"+Trip.COL_seats_num+\" LIKE '%seats_num%' ;";
+        String sql = "SELECT * From trips_table WHERE 'origin' = origin AND 'destination' =destination  AND 'day' = day AND 'month' = month AND 'seats' = seats ";
         Cursor cursor =db.rawQuery(sql, null);
         Log.e("db",cursor.toString());
         boolean b =cursor==null;
-        List<Trip> result = new ArrayList<>();
-        if (cursor.moveToFirst()) {
+        List<Trip> result = new ArrayList<>();        if (cursor.moveToFirst()) {
             do {
                 Trip trip = new Trip(cursor.getString(cursor.getColumnIndex("origin")),cursor.getString(cursor.getColumnIndex("destination")),cursor.getString(cursor.getColumnIndex("day")),cursor.getString(cursor.getColumnIndex("month")),cursor.getString(cursor.getColumnIndex("time")),cursor.getString(cursor.getColumnIndex("seats_num")),cursor.getString(cursor.getColumnIndex("exp")));
                 Log.e("trip:",trip.toString());
                 trip.setId(cursor.getInt(cursor.getColumnIndex("id")));
-//                trip.setOrigin(cursor.getString(cursor.getColumnIndex("origin")));
-//                trip.setDestination(cursor.getString(cursor.getColumnIndex("destination")));
-//                trip.setDay(cursor.getString(cursor.getColumnIndex("day")));
-//                trip.setMonth(cursor.getString(cursor.getColumnIndex("month")));
-//                trip.setTime(cursor.getString(cursor.getColumnIndex("time")));
-//                trip.setSeats_num(cursor.getString(cursor.getColumnIndex("seats_num")));
-//                trip.setExp(cursor.getString(cursor.getColumnIndex("exp")));
                 result.add(trip);
             }
             while (cursor.moveToNext());

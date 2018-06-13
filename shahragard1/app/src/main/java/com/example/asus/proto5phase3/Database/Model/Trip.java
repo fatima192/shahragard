@@ -30,14 +30,14 @@ public class Trip {
     public static final String COL_seats= "seats_num";
     public static final String COL_exp= "exp";
 
-    private int id;
-    private String origin;
-    private String destination;
-    private String day;
-    private String month;
-    private String time;
-    private String seats_num;
-    private String exp;
+    public int id;
+    public String origin;
+    public String destination;
+    public String day;
+    public String month;
+    public String time;
+    public String seats_num;
+    public String exp;
 
 
 
@@ -55,7 +55,7 @@ public class Trip {
                     + COL_exp + " TEXT"
                     + ")";
 
-    public Trip( String Origin,  String destination, String day, String month, String time , String seats_num, String exp ){
+    public Trip( String origin,  String destination, String day, String month, String time , String seats_num, String exp ){
         this.origin= origin;
         this.destination=destination;
         this.day=day;
