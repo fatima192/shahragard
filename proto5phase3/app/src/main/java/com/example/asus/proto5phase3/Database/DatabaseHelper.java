@@ -88,7 +88,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = getReadableDatabase();
         String[] sqlselect = {origin, destination, day, month, seats_num};
         String tableName = "trips_table";
-        String sql="SELECT * From trips_table;";
+         String sql="SELECT * From trips_table;";
+        //String sql = "SELECT * From trips_table WHERE origin ="+origin+"  AND destination ="+destination+"  AND day = "+day+" AND month ="+month+" AND seats_num ="+seats_num;
         Cursor cursor =db.rawQuery(sql, null);
         Log.e("db",cursor.toString());
         boolean b =cursor==null;
