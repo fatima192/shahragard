@@ -1,4 +1,5 @@
-package com.example.asus.proto5phase3;
+package com.example.fatima.shahragardwithlogin;
+
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
@@ -9,9 +10,9 @@ import android.view.ViewGroup;
 
 
 
-public class ProfileFragment extends Fragment {
-    public static ProfileFragment newInstance() {
-        ProfileFragment fragment= new ProfileFragment();
+public class Notification extends Fragment {
+    public static Notification newInstance() {
+        Notification fragment= new Notification();
 
         return fragment;
     }
@@ -24,6 +25,6 @@ public class ProfileFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_profile, container, false);
+        return inflater.inflate(R.layout.fragment_notification, container, false);
     }
 }

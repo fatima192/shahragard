@@ -1,4 +1,5 @@
-package com.example.asus.proto5phase3;
+package com.example.fatima.shahragardwithlogin;
+
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
@@ -9,9 +10,9 @@ import android.view.ViewGroup;
 
 
 
-public class ProfileFragment extends Fragment {
-    public static ProfileFragment newInstance() {
-        ProfileFragment fragment= new ProfileFragment();
+public class Profile extends Fragment {
+    public static Profile newInstance() {
+        Profile fragment= new Profile();
 
         return fragment;
     }
