@@ -182,3 +182,6 @@ fabric.properties
 
 
 # End of https://www.gitignore.io/api/android,androidstudio
+ShahragardWithLogin1/\.idea/
+
+\.idea/
