@@ -1,14 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Profile">
+    tools:context=".ProfileFragment"
+    tools:layout_editor_absoluteY="81dp">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
-</FrameLayout>
+
+    <ImageView
+        android:id="@+id/profilePic"
+        android:layout_width="119dp"
+        android:layout_height="97dp"
+        android:layout_marginBottom="23dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ic_person_black_24dp"
+        app:layout_constraintBottom_toTopOf="@+id/profileName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/profileName"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="21dp"
+        android:text="نام"
+        app:layout_constraintBottom_toTopOf="@+id/profileAge"
+        app:layout_constraintEnd_toEndOf="@+id/profileAge"
+        app:layout_constraintStart_toStartOf="@+id/profileAge"
+        app:layout_constraintTop_toBottomOf="@+id/profilePic" />
+
+    <TextView
+        android:id="@+id/profileAge"
+        android:layout_width="160dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="24dp"
+        android:layout_marginEnd="16dp"
+        android:text="سن"
+        app:layout_constraintBottom_toTopOf="@+id/profileAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profileName" />
+
+    <TextView
+        android:id="@+id/profileAddress"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="25dp"
+        android:text="محل سکونت"
+        app:layout_constraintBottom_toTopOf="@+id/profileCar"
+        app:layout_constraintEnd_toEndOf="@+id/profileAge"
+        app:layout_constraintStart_toStartOf="@+id/profileCar"
+        app:layout_constraintTop_toBottomOf="@+id/profileAge" />
+
+    <TextView
+        android:id="@+id/profileCar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="22dp"
+        android:text="مدل ماشین"
+        app:layout_constraintBottom_toTopOf="@+id/profileCarNum"
+        app:layout_constraintEnd_toEndOf="@+id/profileCarNum"
+        app:layout_constraintStart_toStartOf="@+id/profileCarNum"
+        app:layout_constraintTop_toBottomOf="@+id/profileAddress" />
+
+    <TextView
+        android:id="@+id/profileCarNum"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="26dp"
+        android:text="شماره پلاک"
+        app:layout_constraintBottom_toTopOf="@+id/proflePhoneNum"
+        app:layout_constraintEnd_toEndOf="@+id/proflePhoneNum"
+        app:layout_constraintStart_toStartOf="@+id/proflePhoneNum"
+        app:layout_constraintTop_toBottomOf="@+id/profileCar" />
+
+    <TextView
+        android:id="@+id/proflePhoneNum"
+        android:layout_width="159dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="43dp"
+        android:layout_marginEnd="16dp"
+        android:text="شماره تلفن همراه"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profileCarNum" />
+</android.support.constraint.ConstraintLayout>
