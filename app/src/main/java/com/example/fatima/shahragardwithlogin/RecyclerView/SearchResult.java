@@ -13,6 +13,10 @@ import android.widget.LinearLayout;
 
 import com.example.fatima.shahragardwithlogin.Database.Model.Trip;
 import com.example.fatima.shahragardwithlogin.R;
+import com.example.fatima.shahragardwithlogin.Search;
+
+import java.util.Arrays;
+import java.util.List;
 
 
 public class SearchResult extends Fragment {
@@ -33,7 +37,7 @@ public class SearchResult extends Fragment {
     protected RecyclerView mRecyclerView;
     protected CustomAdapter mAdapter;
     protected RecyclerView.LayoutManager mLayoutManager;
-    protected Trip[] mDataset;
+    public  List<Trip> mDataset;
 
 
 
@@ -99,9 +103,9 @@ public class SearchResult extends Fragment {
      * from a local content provider or remote server.
      */
     private void initDataset() {
-        mDataset = new Trip[DATASET_COUNT];
-        for (int i = 0; i < DATASET_COUNT; i++) {
-           // mDataset[i] = "This is element #" + i;
-        }
+      //  mDataset = Arrays.asList(new Trip[DATASET_COUNT]);
+//        for (int i = 0; i < Search.res.size(); i++) {
+            mDataset.add(Search.res.get(0));
+       // }
     }
 }

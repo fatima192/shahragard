@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
                                 selectedFragment = home.newInstance();
                                 break;
                             case R.id.navigation_search:
-                                selectedFragment = search.newInstance();
+                                selectedFragment = Search.newInstance();
                                 break;
                             case R.id.navigation_maketrip:
                                 selectedFragment = MakeTrip.newInstance();

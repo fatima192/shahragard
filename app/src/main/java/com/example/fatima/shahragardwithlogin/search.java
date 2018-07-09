@@ -24,12 +24,13 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 
-public class search extends Fragment {
+public class Search extends Fragment {
+    public static List  <Trip> res;
     Button btnSearch;
     EditText origin, destination, day, month, seats;
 
-    public static search newInstance() {
-        search fragment = new search();
+    public static Search newInstance() {
+        Search fragment = new Search();
         return fragment;
 
 
@@ -71,14 +72,16 @@ public class search extends Fragment {
     }
 
     public void view() {
-        List<Trip> res=MakeTrip.tripDb.getTripsBySearch(origin.getText().toString(), destination.getText().toString(), day.getText().toString(), month.getText().toString(), seats.getText().toString());
-        viewTrips(res);
+        res=MakeTrip.tripDb.getTripsBySearch(origin.getText().toString(), destination.getText().toString(), day.getText().toString(), month.getText().toString(), seats.getText().toString());
+
 
         if(!res.isEmpty())
             Toast.makeText(getContext(), "در ساخت سفر", Toast.LENGTH_SHORT).show();
         else
             Toast.makeText(getContext(), "fail", Toast.LENGTH_SHORT).show();
     }
+
+
     public void viewTrips(final List<Trip> trips){
         // Cursor res = (Cursor) trips;
         StringBuffer buffer = new StringBuffer();

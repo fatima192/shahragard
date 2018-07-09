@@ -34,7 +34,7 @@ public class Trip {
     private String time;
     private String seats_num;
     private String exp;
-    private String price;
+    public String price="price";
 
 
 

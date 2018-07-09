@@ -8,15 +8,15 @@ import android.view.View;
 import android.widget.Button;
 
 public class signIn extends AppCompatActivity {
-    private Button button;
+    private Button button3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
 
-        button = (Button) findViewById(R.id.signIn_button);
-        button.setOnClickListener(new View.OnClickListener() {
+        button3 = (Button) findViewById(R.id.signUp_button);
+        button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(signIn.this, MainActivity.class);

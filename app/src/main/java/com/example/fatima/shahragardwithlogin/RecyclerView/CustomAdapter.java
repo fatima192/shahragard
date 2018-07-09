@@ -11,11 +11,13 @@ import android.widget.Toast;
 import com.example.fatima.shahragardwithlogin.Database.Model.Trip;
 import com.example.fatima.shahragardwithlogin.R;
 
+import java.util.List;
+
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder> {
     private static final String TAG = "CustomAdapter";
 
-    private Trip[] mDataSet;
+    private List <Trip> mDataSet;
 
     // BEGIN_INCLUDE(recyclerViewSampleViewHolder)
     /**
@@ -43,7 +45,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
      *
      * @param dataSet String[] containing the data to populate views to be used by RecyclerView.
      */
-    public CustomAdapter(Trip[] dataSet) {
+    public CustomAdapter(List<Trip> dataSet) {
         mDataSet = dataSet;
     }
 
@@ -68,9 +70,9 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
     // Replace the contents of a view (invoked by the layout manager)
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, final int position) {
-        viewHolder.textViewName.setText(mDataSet[position].getId());
-        viewHolder.textViewStart.setText(mDataSet[position].getOrigin());
-        viewHolder.textViewDest.setText(mDataSet[position].getDestination());
+        viewHolder.textViewName.setText(mDataSet.get(position).getId());
+        viewHolder.textViewStart.setText(mDataSet.get(position).getOrigin());
+        viewHolder.textViewDest.setText(mDataSet.get(position).getDestination());
 //        viewHolder.textViewPrice.setText(mDataSet[position].);
 //        viewHolder.imageViewProfile.setImageDrawable(mDataSet[position].profile);
 
@@ -80,7 +82,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
     // Return the size of your dataset (invoked by the layout manager)
     @Override
     public int getItemCount() {
-        return mDataSet.length;
+        return mDataSet.size();
     }
 }
 
